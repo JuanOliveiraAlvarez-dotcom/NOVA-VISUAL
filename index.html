@@ -651,7 +651,19 @@ footer{padding:21px 0;font-size:9px}
 </div></div></section></div>
 
 <section class="contact" id="contacto"><div class="contact-glow"></div><div class="wrap"><div class="contactgrid"><div><div class="label">05 / Contacto</div><h2>Cuéntanos qué<br>quieres crear.</h2><p class="contact-copy">No necesitas saber exactamente qué pedir. Explícanos tu negocio y lo que quieres conseguir. Nosotros te proponemos una solución visual.</p><p class="mail">novavisual.iaa@gmail.com</p><p class="social">@novavisual_ai</p></div>
-<form id="contactForm"><input name="Nombre" required placeholder="Nombre"><input name="Email" required type="email" placeholder="Email"><input name="Empresa" placeholder="Empresa"><select name="Sector"><option value="">Sector</option><option>Restauración</option><option>Fitness & wellness</option><option>Inmobiliaria</option><option>Moda & retail</option><option>Belleza</option><option>Salud & clínicas</option><option>Hostelería</option><option>Servicios</option><option>Otro</option></select><textarea name="Mensaje" required placeholder="Cuéntanos qué necesitas"></textarea><button type="submit">Solicitar propuesta →</button></form>
+<form id="contactForm" action="https://formsubmit.co/novavisual.iaa@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="Nuevo contacto — NOVA VISUAL">
+<input type="hidden" name="_next" value="https://novavisual.es/gracias.html">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_autoresponse" value="Gracias por contactar con NOVA VISUAL. Hemos recibido tu mensaje correctamente y te responderemos lo antes posible. — NOVA VISUAL">
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+<input name="nombre" required placeholder="Nombre">
+<input name="email" required type="email" placeholder="Email">
+<input name="empresa" placeholder="Empresa">
+<select name="sector"><option value="">Sector</option><option>Restauración</option><option>Fitness & wellness</option><option>Inmobiliaria</option><option>Moda & retail</option><option>Belleza</option><option>Salud & clínicas</option><option>Hostelería</option><option>Servicios</option><option>Otro</option></select>
+<textarea name="mensaje" required placeholder="Cuéntanos qué necesitas"></textarea>
+<button type="submit">Solicitar propuesta →</button>
+</form>
 </div></div></section><div class="wrap"><footer><span>© 2026 NOVA VISUAL</span><span>novavisual.iaa@gmail.com · @novavisual_ai</span></footer></div>
 
 <div class="modal" id="modal" onclick="if(event.target===this)closeProject()"><div class="modalbox"><div class="modalhead"><div><div class="label" id="mcat"></div><h3 id="mtitle"></h3><p id="mdesc"></p></div><button class="close" onclick="closeProject()">×</button></div><div class="gallery-wrap"><div class="gallery" id="gallery"></div><div class="gallery-nav" id="galleryNav"></div><div class="gallery-count" id="galleryCount"></div></div><a class="modalcta" href="#contacto" onclick="closeProject()">Quiero algo así para mi negocio →</a></div></div>
@@ -702,30 +714,6 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")closeProject()});
 </script>
 
 
-<script>
-(function(){
-  const form=document.getElementById('contactForm');
-  if(!form) return;
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    const data=new FormData(form);
-    const nombre=data.get('nombre')||data.get('name')||'';
-    const empresa=data.get('empresa')||'';
-    const email=data.get('email')||'';
-    const servicio=data.get('servicio')||data.get('service')||'';
-    const mensaje=data.get('mensaje')||data.get('message')||'';
-    const subject=encodeURIComponent('Nuevo contacto — NOVA VISUAL');
-    const body=encodeURIComponent(
-      'NUEVO CONTACTO — NOVA VISUAL\\n\\n'+
-      'Nombre: '+nombre+'\\n'+
-      'Empresa: '+empresa+'\\n'+
-      'Email: '+email+'\\n'+
-      'Servicio: '+servicio+'\\n\\n'+
-      'Mensaje:\\n'+mensaje
-    );
-    window.location.href='mailto:novavisual.iaa@gmail.com?subject='+subject+'&body='+body;
-  });
-})();
-</script>
+
 
 </body></html>
